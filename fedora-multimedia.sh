@@ -26,7 +26,7 @@ fi
 
 # Update metadata for graphical app stores
 if [ "$DISTRO" == "Fedora" ]; then
-  sudo dnf install rpmfusion-\*-appstream-data
+  sudo dnf install rpmfusion-\*-appstream-data -y
 elif [ "$DISTRO" == "Fedora Silverblue" ]; then
   sudo ostree pull --repo=/ostree/repo rpmfusion-free
   sudo ostree pull --repo=/ostree/repo rpmfusion-nonfree
