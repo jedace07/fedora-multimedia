@@ -26,7 +26,7 @@ fi
 
 # Update metadata for graphical app stores
 if [ "$DISTRO" == "Fedora" ]; then
-  sudo dnf update -y
+  sudo dnf install rpmfusion-\*-appstream-data
 elif [ "$DISTRO" == "Fedora Silverblue" ]; then
   sudo ostree pull --repo=/ostree/repo rpmfusion-free
   sudo ostree pull --repo=/ostree/repo rpmfusion-nonfree
@@ -36,7 +36,7 @@ fi
 
 # Install full/proprietary media codecs
 if [ "$DISTRO" == "Fedora" ]; then
-  sudo dnf install -y gstreamer1-plugins-ugly gstreamer1-plugins-bad-free gstreamer1-plugins-bad-nonfree gstreamer1-libav
+  sudo dnf swap ffmpeg-free ffmpeg --allowerasing -y
 elif [ "$DISTRO" == "Fedora Silverblue" ]; then
   sudo rpm-ostree install gstreamer1-plugins-ugly gstreamer1-plugins-bad-free gstreamer1-plugins-bad-nonfree gstreamer1-libav
 elif [ "$DISTRO" == "RHEL/CentOS" ]; then
