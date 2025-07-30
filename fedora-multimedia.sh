@@ -47,4 +47,27 @@ elif [ "$DISTRO" == "RHEL/CentOS" ]; then
   sudo yum install -y gstreamer1-plugins-ugly gstreamer1-plugins-bad-free gstreamer1-plugins-bad-nonfree gstreamer1-libav
 fi
 
+# Check and install GPU hardware codecs
+if lspci | grep -i "VGA" | grep -i "NVIDIA"; then
+  echo "NVIDIA GPU detected. Installing NVIDIA hardware codecs..."
+  if [ "$DISTRO" == "Fedora" ]; then
+    sudo dnf install -y nvidia-driver-libs-cuda
+  elif [ "$DISTRO" == "Fedora Silverblue" ]; then
+    sudo rpm-ostree install nvidia-driver-libs-cuda
+  elif [ "$DISTRO" == "RHEL/CentOS" ]; then
+    sudo yum install -y nvidia-driver-libs-cuda
+  fi
+elif lspci | grep -i "VGA" | grep -i "AMD"; then
+  echo "AMD GPU detected. Installing AMD hardware codecs..."
+  if [ "$DISTRO" == "Fedora" ]; then
+    sudo dnf install -y libva-mesa-driver
+  elif [ "$DISTRO" == "Fedora Silverblue" ]; then
+    sudo rpm-ostree install libva-mesa-driver
+  elif [ "$DISTRO" == "RHEL/CentOS" ]; then
+    sudo yum install -y libva-mesa-driver
+  fi
+else
+  echo "No supported GPU detected. Hardware codecs will not be installed."
+fi
+
 echo "Script completed successfully!"
