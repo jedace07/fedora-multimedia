@@ -9,6 +9,7 @@ This script will:
 - Enable proprietary codecs
 - Install Nvidia drivers
 - Install corresponding hardware codecs
+
 NOTE: I haven't tested this on any Silverblue or RHEL system, so I can't guarantee that it'll work on those, feel free to raise an issue or commit a patch if you happen to fix it.
 
 ### Installing and Running
