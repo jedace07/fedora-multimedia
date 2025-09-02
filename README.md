@@ -13,9 +13,9 @@ NOTE: I haven't tested this on any Silverblue or RHEL system, so I can't guarant
 
 ### Installing and Running
 
-> git clone https://codeberg.org/jedxyz/fedora-multimedia.git
-> cd ~/fedora-multimedia
-> bash fedora-multimedia.sh
+> git clone https://codeberg.org/jedxyz/fedora-multimedia.git  
+> cd ~/fedora-multimedia  
+> bash fedora-multimedia.sh  
 
 ## License
 
