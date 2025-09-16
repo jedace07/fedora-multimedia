@@ -1,3 +1,9 @@
+<!--
+SPDX-FileCopyrightText: 2025 Jed
+
+SPDX-License-Identifier: Apache-2.0
+-->
+
 # Fedora Multimedia
 
 Simple script for automating the installation of proprietary repos, codecs and drivers. 
@@ -20,4 +26,4 @@ IMPORTANT: This is very much in an alpha "it worked on a vm" state, so unless yo
 
 ## License
 
-This project is licensed under the Apache 2.0 License - see the LICENSE file for details
+This project is licensed under the Apache 2.0 License - see the LICENSE directory for details

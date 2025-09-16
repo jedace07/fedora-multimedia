@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# SPDX-FileCopyrightText: 2025 Jed
+#
+# SPDX-License-Identifier: Apache-2.0
+
 # Check if the Linux distribution is Fedora, Fedora Silverblue, RHEL, or CentOS
 if [ -f /etc/fedora-release ]; then
   DISTRO="Fedora"
